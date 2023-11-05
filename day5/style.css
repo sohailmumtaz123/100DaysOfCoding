@@ -1,0 +1,106 @@
+body{
+    background-color: #003142;
+    margin: 0 auto;
+    padding: 30px 100px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 700px;
+    position: relative;
+}
+h1{
+    color:#33F4C8;
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 100px;
+    margin: 20px 0;
+    padding: 0;  
+    z-index: 100;
+}
+main p{
+    color: #fff;
+    font-size: 20px;
+    width:400px;
+    margin-top: 40px;
+}
+button{
+    background-color: #33F4C8;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.follow-us{
+    display: flex;
+    margin-top: 50px;
+}
+.follow-us img{
+    width: 30px;
+    height: auto;
+    padding-right: 10px;
+}
+.follow-us p{
+    font-size: 16px;
+    margin: 16px 0;
+}
+/* Absolute avatars */
+#img1{
+    position: absolute;
+    top: 70px;
+    left: 15px;
+    width: 100px;
+    z-index: -1;
+}
+#img2{
+    position: absolute;
+    top: 70px;
+    right: 29%;
+    width: 80px;
+    z-index: -1;
+}
+#img3{
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    width: 120px;
+    z-index: 0;
+}
+#img4{
+    position: absolute;
+    top: 43%;
+    right: 40%;
+    width: 80px;
+    z-index: -1;
+}
+#img5{
+    position: absolute;
+    top: 40%;
+    right: 70px;
+    width: 90px;
+    z-index: -1;
+}
+#img6{
+    position: absolute;
+    bottom: 10%;
+    right: 100px;
+    width: 160px;
+    z-index: -1;
+}
+@media (max-width:600px) {
+    body{
+        padding: 30px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    h1{
+        font-size: 60px;
+        width: 100%;
+        line-height: 70px;
+    }
+    #img2, #img3, #img5,#img6,#img1,#img4,.follow-us,h1{
+        display: none;
+    }
+
+    
+}

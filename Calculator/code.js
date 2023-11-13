@@ -17,6 +17,11 @@ function clear1(){
 }
 
 function result(){
-  display.value=eval(display.value);
+  if(display.value==""){
+    alert("Please enter the numbers to calculate")
+  }
+  else{
+    display.value=eval(display.value);
+  } 
 }
 

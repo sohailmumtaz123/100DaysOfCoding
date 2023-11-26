@@ -3,7 +3,7 @@ let sendChatBtn=document.querySelector(".chat-input span");
 let chatbox=document.querySelector(".chatbox");
 
 let userMessage;
-const API_KEY = "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";
+const API_KEY = "kcnkdjnckjsndckjsndckjnskncs";
 const API_URL= "https://api.openai.com/v1/chat/completions";
 
 const generateResponse = () => {

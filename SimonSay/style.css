@@ -1,0 +1,36 @@
+body{
+     text-align: center;
+     margin: auto;
+     padding: auto;
+}
+.btns{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 150px 150px;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.btn{
+    background-color: aquamarine;
+    height: 150px;
+    border: 5px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn:nth-child(1){
+    background-color: #D64F76;
+}
+.btn:nth-child(2){
+    background-color: #58A0BA;
+}
+.btn:nth-child(3){
+    background-color: #FB903C;
+}
+.btn:nth-child(4){
+    background-color: #7794F9;
+}
+.flash{
+    background-color: #fff !important;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Breakpoints in JS</title>
+</head>
+<body>
+    <h3>Learn Breakpoints in JS</h3>
+    
+    <script>
+
+        function storeData(data, success, failer){
+            let speed=Math.floor((Math.random() * 10)+1);
+            if(speed > 4){
+                success();
+            }
+            else{
+                failer();
+            }
+        }
+
+        storeData("Sohail", 
+        ()=> {
+            console.log("Success1: Data is saved in Database.");
+            storeData("Hello Sohail",
+            ()=>{
+                console.log("Success2: Second data is saved in DB")
+            },
+            ()=>{
+                console.log("Failer: Second Data is not Saved.")
+            })
+        }, 
+        ()=>{
+            console.log("Data is not saved!!");
+        });
+
+        //Callback Hell
+        // let h3=document.querySelector("h3");
+        // function changeColor(color, delay, nextcolorchange){
+        //     setTimeout( () => {
+        //         h3.style.color=color;
+        //         if(nextcolorchange) nextcolorchange();
+        //     },delay)
+        // }
+        // changeColor("red", 1000, () => {
+        //     changeColor("blue", 1000, ()=>{
+        //         changeColor("green", 1000, () => {
+        //             changeColor("Orange", 1000);
+        //         });
+        //     });
+        // });
+
+
+        //Learn about breakpoints in browser
+        // function one(){
+        //     return 1;
+        // }
+        // function two(){
+        //     return one() + one();
+        // }
+        // function three(){
+        //     let sum=two() + one();
+        //     console.log(sum);
+        // }
+        // three();
+    </script>
+
+</body>
+</html>

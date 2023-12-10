@@ -9,33 +9,20 @@
     <h3>Learn Breakpoints in JS</h3>
     
     <script>
+        //---------------- Learn about breakpoints in browser
+        // function one(){
+        //     return 1;
+        // }
+        // function two(){
+        //     return one() + one();
+        // }
+        // function three(){
+        //     let sum=two() + one();
+        //     console.log(sum);
+        // }
+        // three();
 
-        function storeData(data, success, failer){
-            let speed=Math.floor((Math.random() * 10)+1);
-            if(speed > 4){
-                success();
-            }
-            else{
-                failer();
-            }
-        }
-
-        storeData("Sohail", 
-        ()=> {
-            console.log("Success1: Data is saved in Database.");
-            storeData("Hello Sohail",
-            ()=>{
-                console.log("Success2: Second data is saved in DB")
-            },
-            ()=>{
-                console.log("Failer: Second Data is not Saved.")
-            })
-        }, 
-        ()=>{
-            console.log("Data is not saved!!");
-        });
-
-        //Callback Hell
+        //----------------- Callback Hell
         // let h3=document.querySelector("h3");
         // function changeColor(color, delay, nextcolorchange){
         //     setTimeout( () => {
@@ -51,19 +38,69 @@
         //     });
         // });
 
+        //----------------- CallBack Hell, Optimize it using Promise. 
+        // function storeData(data, success, failer){
+        //     let speed=Math.floor((Math.random() * 10)+1);
+        //     if(speed > 4){
+        //         success();
+        //     }
+        //     else{
+        //         failer();
+        //     }
+        // }
 
-        //Learn about breakpoints in browser
-        // function one(){
-        //     return 1;
-        // }
-        // function two(){
-        //     return one() + one();
-        // }
-        // function three(){
-        //     let sum=two() + one();
-        //     console.log(sum);
-        // }
-        // three();
+        // storeData("Sohail", 
+        // ()=> {
+        //     console.log("Success1: Data is saved in Database.");
+        //     storeData("Hello Sohail",
+        //     ()=>{
+        //         console.log("Success2: Second data is saved in DB")
+        //     },
+        //     ()=>{
+        //         console.log("Failer: Second Data is not Saved.")
+        //     })
+        // }, 
+        // ()=>{
+        //     console.log("Data is not saved!!");
+        // });
+
+        // Optimize Callback Hell using promise
+        function storeToDB(data){
+            return new Promise((resolve, reject)=> {
+                let netspeed=Math.floor((Math.random()*10) + 1);
+                if(netspeed > 4){
+                    resolve("Success: Data was saved");
+                }
+                else{
+                    reject("Failur: Weak Connection");
+                }
+            });
+        }
+
+
+        // let request=storeToDB("Sohail Mumtaz");
+        // request
+        // .then( () => {
+        //     console.log("Promise was resolved.")
+        // })
+        // .catch(() => {
+        //     console.log("Promise was rejected.")
+        // });
+
+        // Request alternative Direct method
+        storeToDB("Sohail Mumtaz")
+        .then( () => {
+            console.log("Promise was resolved.")
+            return storeToDB("Promise Chaining");
+        })
+        .then(() => {
+            console.log("Second Promise resolved.");
+        })
+        .catch(() => {
+            console.log("Promise was rejected.")
+        });
+
+
     </script>
 
 </body>

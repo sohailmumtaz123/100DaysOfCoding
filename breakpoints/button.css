@@ -1,8 +1,10 @@
 body{
-    background: #1E0F21;
+    /* background: #1E0F21; */
+    background: #fff;
     font-family: monospace;
 }
-.button1{
+/* https://codepen.io/afa34/pen/VwzxmNN */
+/* .button1{
     display: grid;
 }
 .btn-epic {
@@ -97,73 +99,967 @@ body{
   
   .btn-epic:hover span:last-child {
     transform: translateY(-24px);
-  }
+  } */
   
   /* Button#2 --------------------- */
-  .button2{
-    display: grid;
-    font-family: Avenir, sans-serif;
+  @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+  /* $background: #fafbff;
+  $button-width: 120px;
+  $border-radius: 5px; */
+
+/* html {
+  font-family: "Fredoka One", cursive;
+  background-color: blue;
+} */
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  flex-flow: column;
+  overflow:auto;
+  top: 0;
+  left: 0;
+  padding: 5px 20px;
+}
+
+h1 {
+  display: inline-block;
+  position: relative;
+  margin: 2.5rem 0.5rem 0.5rem 50px;
+  background: #fafbff;
+  font-size: 1.68rem;
+  font-weight: bold;
+  padding: 0 10px;
+  &::before {
+    width: calc(100% + 80px);
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    content: "";
+    z-index: -1;
+  }
+}
+
+.click-btn {
+  display: flex;
+  width: 120px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  line-height: 35px;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.35s;
+  box-sizing: border-box;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.updating {
+  margin: 3em;
+  text-align: center;
+}
+
+/* // button style */
+
+.btn-style1 {
+  color: #979695;
+  /* $btn-hover-color: #5e5e5e; */
+  position: relative;
+  border-color: #979695;
+  color: #979695;
+  &:hover {
+    transform: translateY(-0.25em);
+    border-color: #5e5e5e;
+    color: #5e5e5e;
+    &::before {
+      opacity: 1;
+    }
+  }
+  &::before {
+    width: 100%;
+    height: 1em;
+    position: absolute;
+    left: 0;
+    bottom: -1.35em;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0) 80%
+    );
+    opacity: 0;
+    transition: all 0.65s;
+    content: "";
+  }
+}
+
+.btn-style2 {
+  /* $btn-color: #dd7e2a;
+  $btn-hover-color: #b5c952; */
+  border-color: #dd7e2a;
+  color: #dd7e2a;
+  &:hover {
+    box-shadow: 0 0.25em 0.25em -0.1em #b5c952;
+    transform: translateY(-0.25em);
+    border-color: #b5c952;
+    color: #b5c952;
+  }
+}
+
+.btn-style3 {
+  /* $btn-color: #979695;
+  $btn-hover-color: #5e5e5e; */
+  border-color: #979695;
+  color:#979695;
+  &:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0 0 0.5em 0em #5e5e5e;
+    border-color: #5e5e5e;
+    color: #5e5e5e;
+  }
+}
+
+.btn-style4 {
+  /* $btn-color: #716eef;
+  $btn-hover-color: #dd648a; */
+  border-color: #716eef;
+  color: #716eef;
+  &:hover {
+    box-shadow: inset 0 0 0.55em 0em #dd648a;
+    border-color: #dd648a;
+    color: #dd648a;
+  }
+}
+
+.btn-style5 {
+  /* $btn-color: #979695;
+  $btn-hover-color: #dd6395; */
+  /* $offset: 0.3em; */
+  border-color: #979695;
+  color: #979695;
+  box-shadow: 0.3em 0.3em 0 #dd6395;
+  &:hover {
+    box-shadow: -0.3em -0.3em 0 #979695;
+    background-color: #dd6395;
+    border-color: #dd6395;
     color: #fff;
   }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
+}
+
+.btn-style500 {
+  /* $btn-color: #716eef; */
+  border-color: #716eef;
+  color: #716eef;
+  &:hover {
+    color: #fff;
+    transition-delay: 0.2s;
+    animation: ani500 0.6s forwards;
+    background: radial-gradient(circle, #716eef 0.2em, transparent 0.3em) 6em
+        6em/1em 1em,
+      radial-gradient(circle, #716eef 0.2em, transparent 0.3em) 0 0/1em 1em;
   }
-  
-  .cta {
-    position: relative;
-    margin: auto;
-    padding: 19px 22px;
-    transition: all 0.2s ease;
+}
+@keyframes ani500 {
+  100% {
+    background-size: 2.375em 2.375em, 0.1em 0.1em;
   }
-  
-  .cta::before {
+}
+
+.btn-style501 {
+  /* $btn-color: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%); */
+  background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+  background-size: 200% auto;
+  background-position: left top;
+  border-color: transparent;
+  color: #464646;
+  &:hover {
+    background-position: right bottom;
+    color: #000;
+  }
+}
+
+.btn-style502 {
+  /* $btn-color1: #716eef;
+  $btn-color2: #fbb8a9;
+  $btn-gradient: #c15b44; */
+  border-color: #716eef;
+  color: #fff;
+  background: repeating-linear-gradient(
+    40deg,
+    #716eef 0%,
+    #716eef 5%,
+    #fbb8a9 5%,
+    #c15b44 10%
+  );
+  text-shadow: 1px 1px 0em #000;
+  &:hover {
+    background-position: 120px;
+    text-shadow: 2px 2px 0.2em #000;
+  }
+}
+
+.btn-style503 {
+  /* $btn-color: #dd6395;
+  $btn-hover-color: #dd7e2a; */
+  border-color: #dd6395;
+  color: #dd6395;
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: inset 5em 0 0 0 #dd7e2a,
+      inset -5em 0 0 0 #dd7e2a;
+    border-color: #dd7e2a;
+    color: #fff;
+  }
+}
+
+.btn-style504 {
+  /* $btn-color: #dd7e2a;
+  $btn-hover-color: #dd648a; */
+  border-color: #dd7e2a;
+  color: #dd7e2a;
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: inset 0 1.5em 0em 0em #dd648a,
+      inset 0 -1.5em 0em 0em #dd648a;
+    border-color: #dd648a;
+    color: #fff;
+  }
+}
+
+.btn-style505 {
+  /* $btn-color: #716eef;
+  $btn-hover-color: #dd648a; */
+  border-color: #716eef;
+  color: #716eef;
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: inset 0 0 0 2em #dd648a;
+    border-color: #dd648a;
+    color: #fff;
+  }
+}
+
+.btn-style506 {
+  /* $btn-color: #dd7e2a; */
+  position: relative;
+  border-color: #dd7e2a;
+  color: #dd7e2a;
+  overflow: hidden;
+  &::before {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: #dd7e2a;
+    transform: rotateZ(-45deg) translate(-50%, -50%);
+    transition: all 0.3s;
     content: "";
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &::before {
+      width: 100%;
+      top: 0;
+      transform: none;
+    }
+  }
+}
+
+.btn-style507 {
+  /* $btn-color: #dd6395; */
+  position: relative;
+  border-color: #dd6395;
+  color: #dd6395;
+  overflow: hidden;
+  &::before {
+    width: 15%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    display: block;
-    border-radius: 28px;
-    background: rgba(red, 0.5);
-    width: 56px;
-    height: 56px;
-    transition: all 0.3s ease;
+    background-color: #dd6395;
+    transform: rotateZ(-45deg) translate(-50%, -50%);
+    transition: all 0.3s;
+    content: "";
+    z-index: -1;
   }
-  
-  .cta span {
-    position: relative;
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 900;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    vertical-align: middle;
+  &:hover {
+    color: #fff;
+    transition-delay: 0.35s;
+    /* // background-color:#dd6395; */
+    &::before {
+      animation: ani507 0.6s forwards;
+    }
   }
-  
-  .cta svg {
-    position: relative;
-    top: 0;
-    margin-left: 10px;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: blue;
-    stroke-width: 2;
-    transform: translateX(-5px);
-    transition: all 0.3s ease;
+}
+@keyframes ani507 {
+  10% {
+    width: 0;
+    transform: rotateZ(-45deg) translate(-100%, -50%);
   }
-  
-  .cta:hover::before {
+  20% {
+    width: 0;
+    transform: rotateZ(0) translate(-100%, 85%);
+  }
+  60% {
     width: 100%;
-    background: rgba(blue, 1);
+    transform: rotateZ(0) translate(0, 85%);
   }
-  
-  .cta:hover svg {
-    transform: translateX(0);
+  100% {
+    width: 100%;
+    transform: rotateZ(0) translate(0, 0);
   }
-  
-  .cta:active {
-    transform: scale(0.96);
+}
+
+.btn-style508 {
+  /* $btn-color: #5e5e5e;
+  $btn-hover-color: #117831; */
+  position: relative;
+  border-color: #5e5e5e;
+  color: #5e5e5e;
+  overflow: hidden;
+  &::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    transform: translate(-100%, 0) rotate(50deg);
+    transform-origin: top left;
+    transition: all 0.35s;
+    background-color: #117831;
+    z-index: -1;
+    content: "";
   }
-  
+  &:hover {
+    color: #fff;
+    border-color: #117831;
+    &::before {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.btn-style509 {
+  /* $btn-color: #716eef;
+  $btn-hover-color: #4b48cb; */
+  position: relative;
+  background-color: #716eef;
+  border-color: #716eef;
+  color: #fff;
+  &::before,
+  &::after {
+    width: 49px;
+    height: 35px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #4b48cb;
+    transition: all 1s ease;
+    transform: scale(0);
+    content: "";
+    z-index: -1;
+  }
+  &::before {
+    top: -8px;
+    left: 10%;
+  }
+  &::after {
+    bottom: -8px;
+    right: 15%;
+  }
+  &:hover {
+    background-color: #4b48cb;
+    border-color: #4b48cb;
+    &::before,
+    &::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.btn-style510 {
+  /* $btn-color: #5e5e5e;
+  $btn-hover-color: #dd6395; */
+  position: relative;
+  background-color: #5e5e5e;
+  border-color: #5e5e5e;
+  color: #fff;
+  overflow: hidden;
+  &::before,
+  &::after {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100px) skewX(-15deg);
+    content: "";
+  }
+  &::before {
+    width: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    filter: blur(30px);
+    opacity: 0.5;
+  }
+  &::after {
+    width: 30px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    filter: blur(5px);
+  }
+  &:hover {
+    background-color: #dd6395;
+    border-color: #dd6395;
+    &::before {
+      opacity: 1;
+    }
+    &::before,
+    &::after {
+      transform: translateX(300px) skewX(-15deg);
+      transition: all 0.9s ease;
+    }
+  }
+}
+
+.btn-style511 {
+  /* $btn-color: transparent;
+  $btn-hover-color: #dd6395; */
+  position: relative;
+  border-color: #484848;
+  background-color: #484848;
+  color: #fff;
+  overflow: hidden;
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  &::before,
+  &::after {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 0;
+    background-color: #dd6395;
+    transition: all 0.25s;
+    content: "";
+    z-index: 1;
+  }
+  &::before {
+    top: 0;
+    transform: translate(-100%, 0);
+  }
+  &::after {
+    bottom: 0;
+    transform: translate(100%, 0);
+  }
+  &:hover {
+    color: #fff;
+    &::before,
+    &::after {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.btn-style700 {
+  /* $btn-color: #979695;
+  $btn-hover-color: #dd6395; */
+  position: relative;
+  border-color: #979695;
+  color: #979695;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: #dd6395;
+    border-radius: 5px;
+    border-style: solid;
+    transition: all 0.35s;
+    content: "";
+    z-index: 1;
+  }
+  &::before {
+    width: 0;
+    height: 100%;
+    border-width: 1px 0 1px 0;
+  }
+  &::after {
+    width: 100%;
+    height: 0;
+    border-width: 0 1px 0 1px;
+  }
+  &:hover {
+    border-color: #dd6395;
+    color: #dd6395;
+    &::before {
+      width: 100%;
+      border-width: 1px 0 1px 0;
+    }
+    &::after {
+      height: 100%;
+      border-width: 0 1px 0 1px;
+    }
+  }
+}
+
+.btn-style701 {
+  /* $btn-color: #dd6395;
+  $btn-hover-color: #dd2470;
+  $size: 8px;
+  $offset: 50%; */
+  position: relative;
+  border: none;
+  /* // border-color:#dd6395; */
+  color: #dd6395;
+  span {
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  &::before,
+  &::after,
+  span::before,
+  span::after {
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    transition: all 0.5s;
+    border: 3px solid #dd6395;
+    opacity: 0;
+    content: "";
+  }
+  &::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+    transform: translate(-50%, -50%);
+  }
+  &::after {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+    transform: translate(-50%, 50%);
+  }
+  span::before {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+    transform: translate(50%, -50%);
+  }
+  span::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+    transform: translate(50%, 50%);
+  }
+  &:hover {
+    font-size: 16.5px;
+    color: #dd2470;
+    &::before,
+    &::after,
+    span::before,
+    span::after {
+      opacity: 1;
+      border-color: #dd2470;
+      transform: translate(0%, 0%);
+    }
+  }
+}
+
+.btn-style702 {
+  /* $btn-color: #716eef; */
+  position: relative;
+  border-color: transparent;
+  color: #fff;
+  &::before,
+  &::after {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.3s;
+    content: "";
+  }
+
+  &::before {
+    width: 100%;
+    left: 0;
+    border-radius: 5px;
+    background-color: #716eef;
+    z-index: -1;
+  }
+  &::after {
+    width: 0;
+    left: 50%;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    transform: translate(-50%, 0);
+    z-index: 1;
+  }
+  &:hover {
+    color: #716eef;
+    &::before {
+      transform: scale(0, 1);
+    }
+    &::after {
+      width: 100%;
+      border-color: #716eef;
+      transition-delay: 0.2s;
+    }
+  }
+}
+
+.btn-style703 {
+  /* $btn-color: #dd7e2a;
+  $transition-sec: 0.3; */
+  position: relative;
+  background-color: #dd7e2a;
+  border-color: #dd7e2a;
+  color: #fff;
+  &::before,
+  &::after,
+  span::before,
+  span::after {
+    width: 110%;
+    height: 130%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s;
+    border: 0px solid #dd7e2a;
+    content: "";
+  }
+  &::before {
+    border-top-width: 1px;
+    transition-delay: 0.3s;
+    transform-origin: right top;
+  }
+  &::after {
+    border-bottom-width: 1px;
+    transition-delay: 0.9s;
+    transform-origin: left bottom;
+  }
+  span {
+    &::before {
+      border-left-width: 1px;
+      transition-delay: 0.6s;
+      transform-origin: left top;
+    }
+    &::after {
+      border-right-width: 1px;
+      transform-origin: right bottom;
+    }
+  }
+  &:hover {
+    &::before,
+    &::after,
+    span::before,
+    span::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.btn-style900 {
+  /* $btn-color: rgba(221, 99, 149, 1);
+  $btn-hover-color: #dd2a73; */
+  position: relative;
+  border-color: rgba(221, 99, 149, 1);
+  color: rgba(221, 99, 149, 1);
+  transition-delay: 0.3s;
+  overflow: hidden;
+  &:hover {
+    transform: translateY(-0.3em);
+    border-color: #dd2a73;
+    color: rgba(221, 99, 149, 0);
+    transition-delay: 0s;
+    &::before {
+      opacity: 1;
+      transform: translateX(0);
+      transition-delay: 0.15s;
+    }
+  }
+  &::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    content: attr(data-hover);
+    color: rgba(221, 99, 149, 1);
+    text-align: center;
+    transform: translateX(-60%);
+    transition: all 0.4s;
+    z-index: 1;
+  }
+}
+
+.btn-style901 {
+  /* $btn-color: #dd7e2a; */
+  position: relative;
+  background-color: #dd7e2a;
+  border-color: #dd7e2a;
+  color: #fff;
+  overflow: hidden;
+  &::before {
+    width: 25px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "\f054";
+    font-family: "FontAwesome";
+    font-weight: bold;
+    font-size: 10px;
+    color: #fff;
+    text-indent: 5px;
+    border-radius: 0 50% 50% 0;
+    background-color: rgb(223 183 148 / 73%);
+    transform: translate(-20%, 0) scale(0, 1);
+    transform-origin: left center;
+    transition: all 0.25s;
+    z-index: 1;
+  }
+  &:hover {
+    text-indent: 20px;
+    &::before {
+      transform: translate(-20%, 0) scale(1, 1);
+    }
+  }
+}
+
+.btn-style902 {
+  /* $btn-color: #dd6395; */
+  position: relative;
+  border-color: #dd6395;
+  background-color: #dd6395;
+  color: #fff;
+  overflow: hidden;
+  span[data-name="hover"] {
+    display: inline-block;
+    transition: all 0.25s;
+    transform: translate(0, 0);
+  }
+  span[data-name="me"] {
+    margin-left: 0.25em;
+    transition: all 0.25s;
+    opacity: 1;
+  }
+  .block {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -30%;
+    background-color: rgba(237, 157, 190, 0.5);
+    border-radius: 0 200% 200% 0;
+    transition: all 0.25s;
+    z-index: 1;
+    span {
+      display: block;
+      &::before {
+        content: "\f054";
+        font-family: "FontAwesome";
+      }
+    }
+  }
+  &:hover {
+    span[data-name="me"] {
+      opacity: 0;
+    }
+    span[data-name="hover"] {
+      transition-delay: 0.2s;
+      transform: translate(1.5em, 0);
+    }
+    .block {
+      transition-delay: 0.2s;
+      left: 0;
+    }
+  }
+}
+
+.btn-style903 {
+  /* $btn-color: #716eef; */
+  position: relative;
+  border-color: #716eef;
+  color: #716eef;
+  &::before {
+    width: 15px;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    transition: all 0.2s;
+    transition-delay: 0.1s;
+    background: #716eef;
+    content: "";
+  }
+  &:hover {
+    background-color: #716eef;
+    color: #fff;
+    &::before {
+      left: 100%;
+      transform: translate(-100%, -50%);
+      background-color: #fff;
+    }
+  }
+}
+
+.btn-style904 {
+  /* $btn-color: #dd7e2a;
+  $arrow-background: rgb(223 183 148 / 73%); */
+  position: relative;
+  background-color: #dd7e2a;
+  border-color: #dd7e2a;
+  color: #fff;
+  overflow: hidden;
+  span {
+    position: relative;
+    left: -0.5em;
+    transition: all 0.25s;
+  }
+  &::before,
+  &::after {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(223 183 148 / 73%);
+    transition: all 0.25s;
+    color: #fff;
+  }
+  &::before {
+    width: 25px;
+    content: "\f054";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "FontAwesome";
+    font-size: 10px;
+    font-weight: bold;
+    text-indent: 5px;
+    border-radius: 50% 0 0 50%;
+    z-index: 1;
+  }
+  &::after {
+    width: 100%;
+    transform: translate(100%, 0);
+    content: attr(data-hover);
+    text-align: left;
+    text-indent: 8px;
+  }
+  &:hover {
+    border-color: rgb(223 183 148 / 73%);
+    span {
+      left: -100%;
+    }
+    &::before {
+      right: 70%;
+    }
+    &::after {
+      right: 70%;
+    }
+  }
+}
+
+.btn-style905 {
+  /* $btn-color: #716eef;
+  $btn-hover-color: #3936af;
+  $btn-border-width: 5px;
+  $btn-hover-radius: 20px; */
+  position: relative;
+  background-color: #716eef;
+  border-width: 5px;
+  border-color: #716eef;
+  color: #fff;
+  box-sizing: border-box;
+  &::before {
+    width: 120%;
+    height: 155%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    border: 1px solid 20px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.1);
+    transform-origin: center center;
+    transition: all 0.25s;
+    content: "";
+  }
+  &:hover {
+    background-color: #3936af;
+    border-color: #716eef;
+    border-style: inset;
+    border-radius: 20px;
+    &::before {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.btn-style906 {
+  /* $btn-color: #bf7b7b;
+  $btn-hover-color: #8b5252; */
+  position: relative;
+  background: #bf7b7b;
+  border-color: #bf7b7b;
+  color: #fff;
+  overflow: hidden;
+  &::before {
+    width: 0;
+    height: 4.5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #562424;
+    transition: all 0.35s;
+    content: "";
+    z-index: 2;
+  }
+  &::after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-color: #8b5252;
+    transform: translate(0, -100%);
+    transition: all 0.35s;
+    content: attr(data-hover);
+    z-index: 1;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+    &::after {
+      transform: translate(0, 0);
+    }
+  }
+}

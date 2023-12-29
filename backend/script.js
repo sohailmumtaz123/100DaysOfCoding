@@ -1,9 +1,9 @@
 
 // -------How to run JS file in terminal
-// let n=5; 
-// for (let i=0; i<=n; i++){
-//     console.log(i);
-// }
+let n=5; 
+for (let i=0; i<=n; i++){
+    console.log(i);
+}
 
 // ------Get arguments in Terminal 
 let argumnts=process.argv;
@@ -21,3 +21,9 @@ console.log("Pi: ", math.p);
 // ----Access other directories using module.exports
 const info =require("./fruits");
 console.log(info[0].name);
+
+// -------- Use import instead of require--- to test it we need to add "type" : "module" in package.json.
+// -------- if in package.json has "type" : "module", then require will through error. 
+
+// import { sum2, sohail } from "./math.js";
+// console.log("Import: ", sohail);

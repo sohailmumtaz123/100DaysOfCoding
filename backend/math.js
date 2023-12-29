@@ -9,3 +9,8 @@ let obj={
 }
 
 module.exports=obj;
+
+// Exports for using Import
+// export const sum2=(a, b, c) => a+b+c;
+// export const mul2=(a, b, c) => a*b*c;
+// export let sohail=941;

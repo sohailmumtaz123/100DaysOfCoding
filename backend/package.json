@@ -1,0 +1,11 @@
+{
+  "name": "learning-backend",
+  "version": "1.0.0",
+  "description": "Here we are learning Node.js. Creating the package so that We can use import for module.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sohail Mumtaz",
+  "license": "ISC"
+}

@@ -6,18 +6,10 @@
     <title>Learn Breakpoints in JS</title>
 </head>
 <body>
-    <h3>Learn Breakpoints in JS</h3>
-    <h3>Get random fact about cats</h3>
-    <button id="cat">Get New Fact</button>
-    <p id="fact"></p>
-
-    <div>
-        <h3>Get Random Dog Image</h3>
-        <button id="dog">Get new image</button><br><br>
-        <img src="" width="300" height="auto">
-    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     
+    <h3>Learn Breakpoints in JS</h3>
     <script>
         //---------------- Learn about breakpoints in browser
         // function one(){
@@ -110,7 +102,6 @@
             console.log("Promise was rejected.")
         });
 
-
         // async funtion 
         async function greet() {
             return "Hello World";
@@ -134,7 +125,7 @@
         
         .catch((err)=>{
             console.log(err);
-        })
+        });
 
         // Practise about Axios
         async function getFact(){
@@ -145,64 +136,7 @@
                 console.log(e);
                 return "No Fact Found"
             }
-        }
-
-        // Random fact about cats
-        let btnFact=document.querySelector("#cat");
-        let newFact=document.querySelector("#fact");
-
-        btnFact.addEventListener("click", async()=>{
-            let catfact= await getFact();
-            newFact.innerText=catfact;
-        });
-
-        // Random dog Image
-        let dogApi="https://dog.ceo/api/breeds/image/random";
-        let btnDog=document.querySelector("#dog");
-        let dogImg=document.querySelector("img");
-
-        btnDog.addEventListener("click", async ()=>{
-            dogImg.src=await getDog();
-        })
-        async function getDog(){
-            try{
-                let resDogApi=await axios.get(dogApi);
-                return resDogApi.data.message;
-            }catch(e){
-                return "/"
-            }
-        }
-        // Get Random Joke : Send data in API Header
-        const jokeAPI="https://icanhazdadjoke.com/"
-        async function getjoke(){
-            try{
-                const header={headers: {Accept: "application/json"} };
-                let joke=await axios.get(jokeAPI, header);
-                console.log(joke);
-
-            }catch(e){
-                console("Random Joke API Got an error: ", e);
-            }
-        }
-        // Get list of Universities 
-        const uniApi="http://universities.hipolabs.com/search?name=india"; 
-        
-        console.log(getUni());
-
-        async function getUni(){
-            try{
-                let unidata=await axios.get(uniApi);
-                return unidata;
-            }
-            catch(e){
-                console.log("University API Erro: ", e);
-                return [];
-            }
-        }
-
-
-
-
+        };
     </script>
 
 </body>

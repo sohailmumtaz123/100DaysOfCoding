@@ -1,0 +1,39 @@
+body{
+    max-width: 600px;
+    margin: auto;
+    padding: auto;
+    background-color: antiquewhite;
+    text-align: center;
+}
+/* main{
+    display: inline-flex;
+} */
+div{
+    /* width: 300px; */
+    min-height: 200px;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: blueviolet;
+    color: #fff;
+}
+h1{
+    font-size: 40px;
+    font-weight: 900;
+}
+h3{
+    font-size: 25px;
+    color:#fff;
+}
+button{
+    padding: 15px 30px;
+    font-weight: 600;
+    background-color: antiquewhite;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(113, 32, 189);
+        color: #fff;
+
+    }
+}

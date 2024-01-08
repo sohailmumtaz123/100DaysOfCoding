@@ -3,6 +3,8 @@ const app=express();
 const path=require("path");
 
 const port=8080;
+// app.use(express.static("public")); //will give error if we run server from some other location.
+app.use(express.static(path.join(__dirname, "/public"))); //Now we can run server from other directory
 // app.set("view engine","ejs");
 app.set("views", path.join(__dirname, "/views"));
 
@@ -16,8 +18,13 @@ app.get("/rolldice", (req, res)=>{
 })
 app.get("/ig/:username",(req, res)=>{
     let {username}=req.params;
-    console.log(username);
-    res.render("instagram.ejs", {username});
+    const instadata=require("./data.json"); //Let assume data.json is database
+    let data=instadata[username];
+    if(data){
+        res.render("instagram.ejs", {data});
+    }else{
+        res.send("No account found. Search for cats or dogs.")
+    }  
 })
 
 app.get("/sohail", (req,res)=>{

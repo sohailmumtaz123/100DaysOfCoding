@@ -8,7 +8,9 @@ app.set("views", path.join(__dirname, "views"));//For view folder to access ejs 
 app.use(express.static(path.join(__dirname, "public")));//for public folder
 app.use(express.urlencoded({extended: true})); //Express can read post request and all types of api requests
 
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require('uuid'); //Auto create Random ID
+const methodOverride = require('method-override');
+app.use(methodOverride("_method"));
 
 let posts=[
     {
@@ -60,10 +62,19 @@ app.get("/post/:id/edit", (req, res)=>{
     res.render("edit", {post});
 });
 
+//Updating Existing post by edeting it
 app.patch("/post/:id", (req, res)=>{
     let {id} = req.params;
     let newContent=req.body.content;
     let post=posts.find((p)=> id===p.id);
+    post.content=newContent;
+    res.redirect("/post");
+})
+//Delete
+app.delete("/post/:id", (req, res)=>{
+    let {id} = req.params;
+    posts=posts.filter((p)=> id!==p.id);
+    res.redirect("/post");
 })
 
 app.listen(port, (req, res)=>{

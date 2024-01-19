@@ -72,8 +72,9 @@ app.patch("/post/:id", (req, res)=>{
 })
 //Delete
 app.delete("/post/:id", (req, res)=>{
+    console.log("post delete option");
     let {id} = req.params;
-    posts=posts.filter((p)=> id!==p.id);
+    posts=posts.filter((p)=> id!=p.id);
     res.redirect("/post");
 })
 
